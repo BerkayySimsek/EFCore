@@ -1,16 +1,16 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace EFCore.CodeFirst;
-
-public class Initializer
+namespace UdemyEFCore.CodeFirst
 {
-    public static IConfigurationRoot Configuration;
-
-    public static void Build()
+    public class Initializer
     {
-        var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+        public static IConfigurationRoot Configuration;
 
-        Configuration = builder.Build();
+        public static void Build()
+        {
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+            Configuration = builder.Build();
+        }
     }
-
 }

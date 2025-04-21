@@ -1,5 +1,4 @@
-﻿using EFCore.DatabaseFirst.DAL;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace UdemyEFCore.DatabaseFirst.DAL

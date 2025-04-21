@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using EFCore.DatabaseFirst.DAL;
 using Microsoft.EntityFrameworkCore;
 using UdemyEFCore.DatabaseFirst.DAL;
 
@@ -12,6 +11,6 @@ using (var _context = new AppDbContext())
 
     products.ForEach(p =>
     {
-        Console.WriteLine($"{p.Id} :{p.Name} - {p.Price}");
+        Console.WriteLine($"{p.Id} :{p.Name} - {p.Price} - {p.Stock}");
     });
 }

@@ -1,16 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace EFCore.CodeFirst.DAL;
-
-public class Product
+namespace UdemyEFCore.CodeFirst.DAL
 {
-    public int Id { get; set; }
-    public string? Name { get; set; }
-    public decimal Price { get; set; }
-    public int Stock { get; set; }
-    public int Barcode { get; set; }
+
+    public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        // #######.##
+        [Precision(9, 2)]
+        public decimal Price { get; set; }
+
+        [Precision(9, 2)]
+        public decimal DiscountPrice { get; set; }
+
+        public int Stock { get; set; }
+
+        public int Barcode { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public virtual Category Category { get; set; }
+
+        public virtual ProductFeature ProductFeature { get; set; }
+    }
 }
